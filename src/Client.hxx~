@@ -1,0 +1,62 @@
+#ifndef Client_hxx
+#define Client_hxx
+#include "MailStub.hxx"
+#include <sstream>
+
+
+//using namespace std;
+
+class Client{
+
+private:
+	std::string _name;					//Atributo Nombre
+	std::string _email;					//Atributo Email
+
+			
+public: 
+
+	Client()										//Constructor						//
+	{
+	}
+	
+	~Client()	
+	{	
+	}
+	
+	const std::string & name() const			//Método getter de nombre
+	{
+		return _name;
+	}
+
+	void name( const std::string & name ){ 		//Método setter de nombre
+	
+		_name = name;
+	
+	}
+	
+
+	const std::string & email() const				//Método getter de email
+	{
+		return _email;	
+	}
+
+	void email(const std::string & email)				//Método setter de email
+	{
+		_email = email;	
+	}
+
+	void update(std::string work,std::string author)		// Actualizar cliente
+	{
+	
+	//MailStub::theInstance().addMessage("fasdfas");
+	std::string to = _name + " <" + _email + ">";
+	std::string subject = "new work " + work + " by " + author;
+	MailStub::theInstance().sendMail(to,subject);
+
+	}
+
+	
+	
+};
+
+#endif // Client_hxx

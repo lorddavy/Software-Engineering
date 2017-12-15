@@ -1,0 +1,19 @@
+- What is the effect of the command rm README.md?
+
+Removes files from the index, or from the working tree and the index.
+The files being removed have to be identical to the tip of the branch.
+
+- What is the effect of the command git checkout README.md?
+
+Updates files in the working tree to match the version in the index or the specified tree.
+
+- What is the output of git log?
+
+The output of git log shows on the screen the several commits that have been pushed into the repository.
+
+Find the IDZZZZZZZ of the first commit you made to the repository. Execute the command git checkout ZZZZZZZ README.md
+
+- What is the content of README.md?
+
+- What is the content of README.md after executing git checkout HEAD README.md
+

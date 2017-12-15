@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+#include "myFraction.hxx"
+
+int main()
+{
+
+myFraction f1 (2,3);	//creación f1
+myFraction f2 (8,12);	//creación f2
+
+myFraction f3 = f1 + f2;	//suma
+myFraction f4 = f1 * f2;	//multiplicación
+
+std::cout << "Resultado 1: " << f3.a() << "/" << f3.b() << std::endl;	//prints f3
+std::cout << "Resultado 2: " << f4.a() << "/" << f4.b() << std::endl;	//prints f4
+}

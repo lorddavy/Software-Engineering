@@ -1,0 +1,90 @@
+class view : public QObject{
+
+	Q_Object;
+
+private:
+
+...
+
+public:
+
+...
+
+public slots:
+
+	void Execute(){
+		
+		//...take data
+	
+		emit signal(name);
+	}
+
+signals:
+
+	void signal(String name);
+}
+
+-------------------------------------------------------------
+
+class controller : public QObject{
+
+	Q_Object;
+
+private:
+
+	string _name;
+
+public:
+
+...
+
+Public slots:
+
+	void signal(String name){
+		_name = name;
+		emit addAuthor(_name);
+	}
+
+signals:
+
+	void newAuthor(String name);
+}
+
+---------------------------------------------------------------
+
+class model : public QObject{
+
+	Q_Object;
+
+private:
+
+	Author _author;
+
+public:
+
+	void addAuthor(Author author){ ... }
+
+public slots:
+
+	void newAuthor(String name){
+		
+		_author->name(name);
+		addauthor(_author);
+	}
+}
+
+--------------------------------------------------------------
+
+int main {
+
+Model * m;
+View v;
+Controller c;
+
+QObject::connect( &v, SIGNAL (signal (String)),
+		  &c, SLOT (signal(String)) );
+
+QObject::connect( &c, SIGNAL (newAuthor (String)),
+		  &m, SLOT (newAuthor (String)) );
+
+}
